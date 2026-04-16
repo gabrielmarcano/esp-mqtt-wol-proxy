@@ -8,7 +8,15 @@ from umqtt.simple import MQTTClient
 # Securely import credentials
 import secrets 
 
-MQTT_CLIENT_ID = 'esp32_proxy_wol'
+
+# Get device MAC as text
+import machine
+import ubinascii
+
+mac_id = ubinascii.hexlify(machine.unique_id()).decode('utf-8')
+
+# Unique ID: 'esp32_wol_a1b2c3d4e5f6'
+MQTT_CLIENT_ID = f'esp32_wol_{mac_id}'
 MQTT_PORT      = 8883
 
 def wake_on_lan(mac_address):
