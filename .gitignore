@@ -1,0 +1,11 @@
+# Local secrets and configurations
+secrets.py
+
+# macOS files
+.DS_Store
+
+# Editor directories
+.vscode/
+.idea/
+*.swp
+
